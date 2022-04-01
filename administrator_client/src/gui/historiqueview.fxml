@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.HBox?>
+
+
+<HBox xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HistoriqueController">
+   <children>
+      <TableView fx:id="historiqueTableView" HBox.hgrow="ALWAYS">
+         <columns>
+            <TableColumn minWidth="20.0" prefWidth="${historiqueTableView.width * 0.2}" text="id">
+               <cellValueFactory>
+                  <PropertyValueFactory property="id" />
+               </cellValueFactory>
+            </TableColumn>
+      
+            <TableColumn minWidth="20.0" prefWidth="${historiqueTableView.width * 0.1666}" text="Titre">
+               <cellValueFactory>
+                  <PropertyValueFactory property="title" />
+               </cellValueFactory>
+            </TableColumn>
+      
+            <TableColumn minWidth="20.0" prefWidth="${historiqueTableView.width * 0.1666}" text="Auteur">
+               <cellValueFactory>
+                  <PropertyValueFactory property="artist" />
+               </cellValueFactory>
+            </TableColumn>
+      
+            <TableColumn minWidth="20.0" prefWidth="${historiqueTableView.width * 0.1666}" text="Durée">
+               <cellValueFactory>
+                  <PropertyValueFactory property="duration" />
+               </cellValueFactory>
+            </TableColumn>
+      
+            <TableColumn minWidth="20.0" prefWidth="${historiqueTableView.width * 0.1666}" text="Nombre de votes">
+               <cellValueFactory>
+                  <PropertyValueFactory property="totalVotes" />
+               </cellValueFactory>
+            </TableColumn>
+      
+            <TableColumn minWidth="20.0" prefWidth="${historiqueTableView.width * 0.165}" text="pourcentage de votes positif">
+               <cellValueFactory>
+                  <PropertyValueFactory property="percentage" />
+               </cellValueFactory>
+            </TableColumn>
+         </columns>
+      </TableView>
+   </children>
+</HBox>

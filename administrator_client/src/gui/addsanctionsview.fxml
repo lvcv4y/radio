@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" minHeight="500.0" minWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddSanctionController">
+
+    <fx:define>
+        <FXCollections fx:id="MONTHS" fx:factory="observableArrayList">
+            <String fx:value="JANVIER" />
+            <String fx:value="FEVRIER" />
+            <String fx:value="MARS" />
+            <String fx:value="AVRIL" />
+            <String fx:value="MAI" />
+            <String fx:value="JUIN" />
+            <String fx:value="JUILLET" />
+            <String fx:value="AOUT" />
+            <String fx:value="SEPTEMBRE" />
+            <String fx:value="OCTOBRE" />
+            <String fx:value="NOVEMBRE" />
+            <String fx:value="DECEMBRE" />
+        </FXCollections>
+    </fx:define>
+
+   <children>
+      <HBox>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <children>
+            <VBox HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+               <children>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label text="Type de sanction">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <ComboBox fx:id="type" promptText="Type de sanction">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="MUTE"/>
+                                 <String fx:value="BAN" />
+                              </FXCollections>
+                           </items>
+
+                        </ComboBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <TextArea fx:id="description" prefHeight="200" prefWidth="350.0" promptText="Description de la sanction">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </TextArea>
+               </children>
+            </VBox>
+            <Region maxWidth="400.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+            <VBox alignment="CENTER">
+               <children>
+                  <Label text="Qui sanctionner ?">
+                     <VBox.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox>
+                     <children>
+                        <Label text="Identifieur ?">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                         <ChoiceBox fx:id="identifierType" prefWidth="150.0" value="pseudo">
+                             <items>
+                                 <FXCollections fx:factory="observableArrayList">
+                                     <String fx:value="id" />
+                                     <String fx:value="pseudo" />
+                                     <String fx:value="email" />
+                                 </FXCollections>
+                             </items>
+                         </ChoiceBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <TextField fx:id="identifierField" promptText="utilisateur à sanctionner">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </VBox.margin>
+                  </TextField>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox>
+         <children>
+            <VBox alignment="CENTER">
+               <children>
+                  <Label text="Date et heure du début de la sanction">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin></Label>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <ComboBox fx:id="startDay" promptText="Jour">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </ComboBox>
+                        <ComboBox fx:id="startMonth" items="${MONTHS}" promptText="Mois">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </ComboBox>
+                        <ComboBox fx:id="startYear" promptText="Année">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </ComboBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <ComboBox fx:id="startHour" promptText="Heure" />
+                        <Label text="H">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="startMinute" promptText="Minute" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Button fx:id="showDateStart" mnemonicParsing="false" text="Mettre la date actuelle" />
+               </children>
+               <HBox.margin>
+                  <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+               </HBox.margin>
+            </VBox>
+            <Region HBox.hgrow="ALWAYS" />
+            <VBox alignment="CENTER">
+               <children>
+                  <Label text="Date et heure de la fin de la sanction">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin></Label>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <ComboBox fx:id="endDay" promptText="Jour">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </ComboBox>
+                        <ComboBox fx:id="endMonth" items="${MONTHS}" promptText="Mois">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </ComboBox>
+                        <ComboBox fx:id="endYear" promptText="Année">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </ComboBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <ComboBox fx:id="endHour" promptText="Heure">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin></ComboBox>
+                        <Label text="H">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="endMinute" promptText="Minute" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Button fx:id="showDateEnd" mnemonicParsing="false" text="Mettre la date actuelle" />
+               </children>
+               <HBox.margin>
+                  <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+      <Region maxHeight="300.0" prefHeight="100.0" VBox.vgrow="ALWAYS" />
+      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="addButton" alignment="TOP_LEFT" mnemonicParsing="false" text="Ajouter">
+               <HBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>

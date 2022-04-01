@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<HBox xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" fx:id="cover"/>
+      <VBox alignment="TOP_CENTER">
+         <children>
+            <Label text="Titre - Artiste(s)" fx:id="titleAndArtist">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </VBox.margin>
+            </Label>
+            <HBox>
+               <children>
+                  <Label text="9:99" fx:id="duration">
+                     <HBox.margin>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Label text="???%" fx:id="positiveVotePercentage">
+                     <HBox.margin>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <Label text="Proposé par" fx:id="proposedBy">
+               <VBox.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</HBox>

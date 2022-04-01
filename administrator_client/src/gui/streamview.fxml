@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.7" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StreamController">
+   <items>
+      <SplitPane dividerPositions="0.35, 0.5" minHeight="300.0" minWidth="350.0" orientation="VERTICAL">
+         <items>
+            <VBox alignment="TOP_CENTER" minHeight="150.0" minWidth="350.0">
+               <children>
+                  <Label text="Diffusion en cours" wrapText="true">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <VBox VBox.vgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="eventTitle" text="title" wrapText="true">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="eventDesc" text="description" wrapText="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <Label text="Fond Sonore : " wrapText="true">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                              <Label fx:id="isBackTrackOn" text="OFF" wrapText="true">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="10.0" right="15.0" top="5.0" />
+                           </HBox.margin>
+                        </HBox>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <Label text="Freestyle : " wrapText="true" />
+                              <Label fx:id="isFreestyleOn" text="OFF" wrapText="true">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="10.0" right="15.0" top="5.0" />
+                           </HBox.margin>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <Button mnemonicParsing="false" text="Prendre l'antenne..." textAlignment="CENTER" fx:id="startStream">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" minHeight="150.0" minWidth="350.0">
+               <children>
+                  <Label minHeight="20.0" minWidth="20.0" text="Chat" wrapText="true">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <ScrollPane VBox.vgrow="ALWAYS">
+                     <content>
+                        <VBox fx:id="chatBox" />
+                     </content>
+                  </ScrollPane>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <TextField fx:id="chatField" minHeight="20.0" minWidth="100.0" promptText="Message..." HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Button fx:id="chatSend" mnemonicParsing="false" text="Envoyer" wrapText="true">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="15.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </items>
+      </SplitPane>
+      <VBox alignment="CENTER" minHeight="300.0" minWidth="150.0">
+         <children>
+            <Label minHeight="50.0" minWidth="100.0" text="Channel vocal de l'antenne" wrapText="true">
+               <VBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <ScrollPane minHeight="200.0" minWidth="100.0" VBox.vgrow="ALWAYS">
+               <content>
+                  <VBox fx:id="channelBox" spacing="10.0" />
+               </content>
+            </ScrollPane>
+            <Button fx:id="channelButton" mnemonicParsing="false" text="Se connecter" wrapText="true">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </items>
+</SplitPane>

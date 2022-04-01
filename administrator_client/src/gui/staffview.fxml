@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<VBox xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StaffController">
+   <children>
+      <TableView fx:id="tableView" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn minWidth="20.0" prefWidth="${tableView.width * 0.2}" text="id">
+                <cellValueFactory><PropertyValueFactory property="id"/></cellValueFactory>
+            </TableColumn>
+
+            <TableColumn minWidth="20.0" prefWidth="${tableView.width * 0.4}" text="Pseudo">
+                <cellValueFactory><PropertyValueFactory property="nickname"/></cellValueFactory>
+            </TableColumn>
+
+            <!--<TableColumn minWidth="20.0" prefWidth="${tableView.width * 0.3}" text="Adresse mail">
+                <cellValueFactory><PropertyValueFactory property="email"/></cellValueFactory>
+            </TableColumn>-->
+
+            <TableColumn minWidth="20.0" prefWidth="${tableView.width * 0.3995}" text="Status">
+                <cellValueFactory><PropertyValueFactory property="status"/></cellValueFactory>
+            </TableColumn>
+        </columns>
+      </TableView>
+   </children>
+</VBox>
